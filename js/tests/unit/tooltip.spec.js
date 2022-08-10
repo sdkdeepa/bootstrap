@@ -428,7 +428,7 @@ describe('Tooltip', () => {
 
       const tooltipWithTitleEl = fixtureEl.querySelector('#tooltipWithTitle')
       const tooltip = new Tooltip('#tooltipWithTitle')
-      expect(tooltipWithTitleEl.getAttribute('title')).toBeNull()
+      expect(tooltipWithTitleEl.getAttribute('title')).toBe('')
       tooltip.dispose()
       expect(tooltipWithTitleEl.getAttribute('title')).toBe('tooltipTitle')
 
@@ -436,7 +436,7 @@ describe('Tooltip', () => {
       const tooltip2 = new Tooltip('#tooltipWithTitle')
       expect(tooltipWithoutTitleEl.getAttribute('title')).toBeNull()
       tooltip2.dispose()
-      expect(tooltipWithoutTitleEl.getAttribute('title')).toBeNull()
+      expect(tooltipWithoutTitleEl.getAttribute('title')).toBeNull('tooltipTitle')
     })
   })
 
@@ -945,7 +945,7 @@ describe('Tooltip', () => {
         const tooltip = new Tooltip(tooltipEl)
 
         tooltipEl.addEventListener('shown.bs.tooltip', () => {
-          expect(tooltipEl.getAttribute('title')).toBeNull()
+          expect(tooltipEl.getAttribute('title')).toBe('')
           resolve()
         })
         tooltip.show()

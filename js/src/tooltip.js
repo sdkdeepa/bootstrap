@@ -509,7 +509,7 @@ class Tooltip extends BaseComponent {
     }
 
     this._element.setAttribute('data-bs-original-title', title) // DO NOT USE IT. Is only for backwards compatibility
-    this._element.removeAttribute('title')
+    this._element.setAttribute('title', '')
   }
 
   _enter() {
