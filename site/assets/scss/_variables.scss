@@ -9,7 +9,8 @@ $bd-accent:       #ffe484;
 $bd-gutter-x: 3rem;
 $bd-callout-variants: info, warning, danger !default;
 
-:root {
+:root,
+[data-bs-theme="light"] {
   --bd-purple: #{$bd-purple};
   --bd-violet: #{$bd-violet};
   --bd-accent: #{$bd-accent};
@@ -22,8 +23,6 @@ $bd-callout-variants: info, warning, danger !default;
   --bd-sidebar-link-bg: rgba(var(--bd-violet-rgb), .1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bd-violet: #{mix($bd-violet, $black, 75%)};
-  }
+[data-bs-theme="dark"] {
+  --bd-violet: #{mix($bd-violet, $black, 75%)};
 }
